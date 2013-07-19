@@ -9,6 +9,7 @@ PR = "${INC_PR}.1"
 SRCREV = "5cb159395eccb1d96fb73a78e499eef30aacb46d"
 
 SRC_URI += " \
+    file://0003-eglCreateImageKHR-requires-the-context-to-be-NULL.patch \
     file://0004-EGL-Specify-vec2d-precision-qualifier-in-fragment-sh.patch \
 "
 
