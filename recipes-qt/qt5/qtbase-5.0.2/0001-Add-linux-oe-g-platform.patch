@@ -1,7 +1,7 @@
-From d64321c240cbb949b9e55e2cd448c78bf9865c56 Mon Sep 17 00:00:00 2001
+From 81ab8c5610c1f07482cac238839dc9e1c60a57c3 Mon Sep 17 00:00:00 2001
 From: Martin Jansa <Martin.Jansa@gmail.com>
 Date: Mon, 15 Apr 2013 04:29:32 +0200
-Subject: [PATCH 01/16] Add linux-oe-g++ platform
+Subject: [PATCH 1/2] Add linux-oe-g++ platform
 
 * This qmake.conf unlike other platforms reads most variables from
   shell environment, because it's easier for qt recipes to export
@@ -34,9 +34,9 @@ Upstream-Status: Pending
 Signed-off-by: Martin Jansa <Martin.Jansa@gmail.com>
 ---
  configure                            |  54 ++++++++++++++++---
- mkspecs/linux-oe-g++/qmake.conf      |  40 ++++++++++++++
+ mkspecs/linux-oe-g++/qmake.conf      |  41 ++++++++++++++
  mkspecs/linux-oe-g++/qplatformdefs.h | 100 +++++++++++++++++++++++++++++++++++
- 3 files changed, 187 insertions(+), 7 deletions(-)
+ 3 files changed, 188 insertions(+), 7 deletions(-)
  create mode 100644 mkspecs/linux-oe-g++/qmake.conf
  create mode 100644 mkspecs/linux-oe-g++/qplatformdefs.h
 
@@ -149,10 +149,10 @@ index 2ea1ea4..6db4577 100755
              EXTRA_CFLAGS="$EXTRA_CFLAGS -DQMAKE_OPENSOURCE_EDITION"
 diff --git a/mkspecs/linux-oe-g++/qmake.conf b/mkspecs/linux-oe-g++/qmake.conf
 new file mode 100644
-index 0000000..ca26b10
+index 0000000..d42973f
 --- /dev/null
 +++ b/mkspecs/linux-oe-g++/qmake.conf
-@@ -0,0 +1,40 @@
+@@ -0,0 +1,41 @@
 +#
 +# qmake configuration for linux-g++ with modifications for building with OpenEmbedded
 +#
@@ -167,6 +167,7 @@ index 0000000..ca26b10
 +QMAKE_AR              = $(OE_QMAKE_AR) cqs
 +QMAKE_STRIP           = $(OE_QMAKE_STRIP)
 +QMAKE_WAYLAND_SCANNER = $(OE_QMAKE_WAYLAND_SCANNER)
++QMAKE_QTWAYLANDSCANNER = $(OE_QMAKE_QTWAYLANDSCANNER)
 +
 +include(../common/gcc-base-unix.conf)
 +
@@ -300,5 +301,5 @@ index 0000000..dd12003
 +
 +#endif // QPLATFORMDEFS_H
 -- 
-1.8.2.1
+1.8.1.2
 
