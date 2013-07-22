@@ -3,6 +3,7 @@ require ${PN}.inc
 
 SRC_URI += " \
     file://0019-Fix-FBO-restoring-in-QOpenGLTextureGlyphCache.patch \
+    file://0001-Use-OE_QMAKE_PATH_EXTERNAL_HOST_BINS-to-determine-pa.patch \
 "
 
 SRC_URI[md5sum] = "0f8d14bb4039a2996c501a376ca7dae0"
